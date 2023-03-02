@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@700&family=Poppins:wght@500&family=Raleway:wght@300&display=swap');
+
+
+body{
+    padding: 0;
+    margin: 0;
+}
+.navbar{
+    background-color: rgb(191, 160, 160);
+    color: black;
+    width: 100%;
+
+}
+.navbar nav{
+    display: flex;
+    padding: 0px 50px 0 50px;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar nav .burger{
+    color: white;
+    width: 50px;
+    display: none;
+}
+
+.navbar nav .nav-brand .logo{
+    font-family: 'Golos Text', sans-serif;
+    font-size: 1.5rem;
+}
+
+.navbar nav .nav-menu ul{
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+.navbar nav .nav-menu ul a{
+    border-radius: 25px;
+    
+}
+
+@media only screen and (max-width: 900px) {
+    .navbar nav .burger{
+        display: block;
+        cursor: pointer;
+    }
+    .Navbar__ToggleShow{
+        display: flex;
+    }
+    .navbar nav .nav-menu{
+        display: none;
+        position: absolute;
+        top:80px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background-color: rgb(191, 160, 160);
+        height: 450px;
+        overflow: hidden;
+    }
+    .navbar nav .nav-menu.active{
+        height: 450px;
+    }
+    .navbar nav .nav-menu ul{
+        display: block;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        text-align: center;
+    }
+    .navbar nav .nav-menu ul.active{
+        height: 450PX;
+    }
+    .navbar nav .nav-menu ul a{
+        margin-bottom: 50px;
+        
+    }
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <nav>
+            <div class="nav-brand">
+                <div class="logo">OLAMMA</div>
+            </div>
+            <div class="burger" id="burger">
+                <img src="burger.png" alt="burger">
+            </div>
+            <div class="nav-menu" id="menu">
+                <ul>
+                    <a><li>Home</li></a>
+                    <a><li>About Us</li></a>
+                    <a><li>Our Team</li></a>
+                    <a><li>Contact Us</li></a>
+                </ul>
+
+            </div>
+        </nav>
+
+    </div>
+
+
+    <script>
+
+            function classToggle() {
+            const navs = document.querySelectorAll(".nav-menu")
+            
+            navs.forEach(nav => nav.classList.toggle("Navbar__ToggleShow"));
+            }
+
+            document.querySelector(".burger")
+            .addEventListener('click', classToggle);
+        // burger = document.getElementById("burger");
+
+        // burger.onclick = function(){
+        // navMenu = document.getElementById("menu");
+        // navMenu.classList.toggle("active");
+        // }
+    </script>
+</body>
+</html>
