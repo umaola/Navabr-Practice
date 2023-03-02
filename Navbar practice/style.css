@@ -43,9 +43,6 @@ body{
         display: block;
         cursor: pointer;
     }
-    .Navbar__ToggleShow{
-        display: flex;
-    }
     .navbar nav .nav-menu{
         display: none;
         position: absolute;
@@ -73,4 +70,59 @@ body{
         margin-bottom: 50px;
         
     }
+
+    .navbar nav .nav-menu.Navbar__ToggleShow{
+        display: flex;
+    }
 }
+
+/* 
+    REASON WHY IT DIDN'T WORK 
+
+    PROBLEM 1.
+    - You used absolute selector here `.navbar nav .nav-menu` when you gave it the 'display: none', 
+      Absolute selector have much more preference than the normal relative selector [class] `.Navbar__ToggleShow`
+   
+    SOLUTION.
+    - To override an absolute selector, you have to use that exact absolute selector ` .navbar nav .nav-menu`
+
+    PROBLEM 2.
+    - The overriding selector was above the initial selector.
+      eg. 
+      .Navbar__ToggleShow{
+        display: flex;
+      }
+      .navbar nav .nav-menu{
+        display: none;
+        position: absolute;
+        top:80px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background-color: rgb(191, 160, 160);
+        height: 450px;
+        overflow: hidden;
+      }
+
+
+    SOLUTION 2.
+    - Move the overriding selector below the initial selector
+      eg:
+      .navbar nav .nav-menu{
+        display: none;
+        position: absolute;
+        top:80px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background-color: rgb(191, 160, 160);
+        height: 450px;
+        overflow: hidden;
+      }
+
+      .Navbar__ToggleShow{
+        display: flex;
+      }
+
+*/
+
